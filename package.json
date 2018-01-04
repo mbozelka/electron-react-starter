@@ -4,7 +4,7 @@
   "description": "Starter setup for an Electron and React application.",
   "main": "electron-index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
     "electron": "electron electron-index.js development",
     "electron-prod": "electron .",
     "build": "NODE_ENV=production webpack -p --config webpack.prod.js",

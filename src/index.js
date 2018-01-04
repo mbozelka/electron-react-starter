@@ -1,9 +1,18 @@
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux'
+
+// reducers
+import rootReducer from './store/root-reducer'
+
+// base imports
 import './assets/styles/index.scss';
-import { ipcRenderer } from 'electron';
+import App from './components/App';
+import { IncomingMessage } from 'electron';
 
+const store = createStore(rootReducer);
 
-// example calling the IPC Renderer in electron
-// set in electron-index.js
-ipcRenderer.send('test:added', 'Hello from index.js');
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 
